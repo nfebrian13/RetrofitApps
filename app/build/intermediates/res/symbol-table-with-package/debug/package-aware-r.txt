@@ -887,6 +887,7 @@ id message
 id middle
 id movies_layout
 id movies_recycler_view
+id movies_recycler_view_details
 id multiply
 id never
 id none
@@ -991,6 +992,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_empty
+layout activity_movie_details
 layout list_item_movie
 layout notification_action
 layout notification_action_tombstone
