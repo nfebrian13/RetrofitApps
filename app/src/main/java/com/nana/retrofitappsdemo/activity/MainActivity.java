@@ -7,12 +7,12 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.nana.retrofitappsdemo.methodinterface.MovieInterface;
 import com.nana.retrofitappsdemo.R;
 import com.nana.retrofitappsdemo.adapter.MoviesAdapter;
 import com.nana.retrofitappsdemo.model.Movie;
-import com.nana.retrofitappsdemo.model.MoviesResponse;
+import com.nana.retrofitappsdemo.responses.MoviesResponse;
 import com.nana.retrofitappsdemo.rest.ApiClient;
-import com.nana.retrofitappsdemo.rest.ApiInterface;
 
 import java.util.List;
 
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        MovieInterface apiService = ApiClient.getClient().create(MovieInterface.class);
 
         Call<MoviesResponse> call = apiService.getTopRatedMovies(API_KEY);
         call.enqueue(new Callback<MoviesResponse>() {
